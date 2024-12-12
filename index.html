@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-		body{background-color: #272727;
-		     color: #FFFFFF;/*預設文字顏色是白色*/
-		     font-family:"微軟正黑體",Source Code Pro,sans-serif;/*中,英預設字體*/}
-		h1{font-size: 50px;
-			/*color:gray;*/
-		    margin: ,5mm;
-		    background-color: transparent;
-		    /*text-align: center;*/}
-		h2{font-size: 45px;
-			margin: 0mm;}
-		p{font-size: 30px;}
-	</style>
-	<title>吳秉乾的小小網站</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <!-- 引入 Font Awesome -->
+    <style>
+        body {
+            background-color: #272727;
+            color: #FFFFFF; /* 預設文字顏色是白色 */
+            font-family: "微軟正黑體", Source Code Pro, sans-serif; /* 中,英預設字體 */
+        }
+        h1 {
+            font-size: 50px;
+            margin: ,5mm;
+            background-color: transparent;
+        }
+        h2 {
+            font-size: 45px;
+            margin: 0mm;
+        }
+        p {
+            font-size: 30px;
+        }
+        .button-container {
+            margin-top: 10px; /* 設定按鈕容器的頂部外邊距為 20px */
+        }
+        .social-button {
+            display: inline-block; /* 將按鈕設定為行內區塊元素，方便排列 */
+            margin: 10px; /* 設定按鈕之間的左右外邊距為 10px */
+            padding: 10px 20px; /* 設定按鈕的內部填充為上下 10px，左右 20px */
+            font-size: 20px; /* 設定按鈕文字的大小為 20px */
+            color: #FFFFFF; /* 設定按鈕文字的顏色為白色 */
+            background-color: #5B5B5B; /* 設定按鈕的背景顏色為灰色 */
+            border: none; /* 取消按鈕的邊框 */
+            border-radius: 5px; /* 設定按鈕的圓角為 5px */
+            text-decoration: none; /* 移除按鈕的連結下劃線樣式 */
+            cursor: pointer; /* 滑鼠移到按鈕上時游標變為手型 */
+            transition: background-color 0.5s; /* 設定按鈕的背景顏色在滑鼠移入移出時有過渡效果 */
+        }
+        .social-button i {
+            margin-right: 10px; /* 設定圖標和文字之間的間距 */
+        }
+        .social-button:hover {
+            background-color: #d0d0d0; /* 滑鼠移入按鈕時的背景顏色 */
+            color: #4F4F4F;
+        }
+    </style>
+    <title>吳秉乾的小小網站</title>
 </head>
 
 <body>
-	<h1>～自我介紹～</h1>
-	<h2>個人小檔案</h2>
-	<p>姓名：吳秉勳<br>
-	   綽號：吳秉乾<br>
-	   生日：04/19<br>
-		 興趣：拍照、拆解東西
-	</p>
-	<h2>社交軟體帳號</h2>
+    <h1>～自我介紹～</h1>
+    <h2>個人小檔案</h2>
+    <p>姓名：吳秉勳<br>
+       綽號：吳秉乾<br>
+       生日：04/19<br>
+       興趣：拍照、拆解東西
+    </p>
+    <h2>社交軟體帳號</h2>
+    <div class="button-container">
+        <a href="https://www.facebook.com/wu.benson0419" class="social-button" target="_blank">
+            <i class="fab fa-facebook"></i>Facebook
+        </a><br>
+        <a href="https://www.instagram.com/wu.benson0419" class="social-button" target="_blank">
+            <i class="fab fa-instagram"></i>Instagram
+        </a>
+    </div>
 </body>
 </html>
