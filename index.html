@@ -1,105 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"> <!-- 引入 Font Awesome -->
+    <title>吳秉乾的小小網站</title>
+    <!-- 引入 Font Awesome 圖標庫 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <!-- 加入字體(Source Code Pro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #272727;
-            color: #FFFFFF; /* 預設文字顏色是白色 */
-            font-family: "微軟正黑體", Source Code Pro, sans-serif; /* 中,英預設字體 */
-            height: auto; /* 設定高度讓body可以根據內容做高度調整*/
-              
-        }
-         ::-webkit-scrollbar {
-           display: none; /* 隱藏webkit瀏覽器的滾動條*/
-        }
-        h1 {
-            font-size: 30px;
-            margin: 5mm;
-            background-color: #3C3C3C;
-            border-radius: 10px;
-        }
-        h2 {
-            font-size: 25px;
-            margin: 0mm;
-            background-color: transparent;
-        }
-        p {
-            font-size: 20px;
-            background-color: transparent;
-        }
-        img {
-            border-radius: 8px; /* 將四個角的圓角半徑設為 5px */
-        }
-        
-        footer {
-            text-align: center; /* 標題置中 */
-            margin-top: 20px; /* 增加頁尾上方的空間 */
+        /* 全域樣式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* 確保 padding 與 border 不會影響元素實際大小 */
         }
 
-        .button-container {
-            margin-top: 10px; /* 設定按鈕容器的頂部外邊距為 20px */
+        /* 設定頁面背景與整體字體 */
+        body {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a); /* 深色漸層背景 */
+            color: #FFFFFF; /* 文字顏色為白色 */
+            font-family: sans-serif , "微軟正黑體" ; /* 設定主要字體 */
+            padding: 20px; /* 四周留白讓內容不貼邊 */
         }
-        .social-button {
-            display: inline-block; /* 將按鈕設定為行內區塊元素，方便排列 */
-            margin: 10px; /* 設定按鈕之間的左右外邊距為 10px */
-            padding: 10px 20px; /* 設定按鈕的內部填充為上下 10px，左右 20px */
-            font-size: 20px; /* 設定按鈕文字的大小為 20px */
-            color: #FFFFFF; /* 設定按鈕文字的顏色為白色 */
-            background-color: #5B5B5B; /* 設定按鈕的背景顏色為灰色 */
-            border: none; /* 取消按鈕的邊框 */
-            border-radius: 10px; /* 設定按鈕的圓角為 10px */
-            text-decoration: none; /* 移除按鈕的連結下劃線樣式 */
-            cursor: pointer; /* 滑鼠移到按鈕上時游標變為手型 */
-            transition: background-color 0.6s; /* 設定按鈕的背景顏色在滑鼠移入移出時有過渡效果 */
+
+        /* 頁首標題區 */
+        header {
+            text-align: center; /* 標題置中 */
+            margin-bottom: 20px; /* 與下方內容保持間距 */
         }
-        .social-button i {
-            margin-right: 10px; /* 設定圖標和文字之間的間距 */
+
+        header h1 {
+            font-size: 28px; /* 標題字體大小 */
+            background-color: #3C3C3C; /* 深灰背景讓標題突出 */
+            padding: 10px 20px; /* 內距使標題不顯擁擠 */
+            border-radius: 15px; /* 圓角修飾 */
+            display: inline-block; /* 讓背景寬度僅包覆文字 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 輕微陰影增加立體感 */
         }
-        .social-button:hover {
-            background-color: #d0d0d0; /* 滑鼠移入按鈕時的背景顏色 */
-            color: #4F4F4F;
+
+        /* 個人檔案卡片區塊 */
+        .profile-card {
+            background-color: #3C3C3C; /* 深灰背景與頁面背景形成層次 */
+            border-radius: 20px; /* 圓角增加柔和感 */
+            padding: 20px; /* 內距確保內容不緊貼邊緣 */
+            text-align: center; /* 內容置中 */
+            margin-bottom: 25px; /* 與下方社交連結區保持距離 */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* 更深的陰影營造卡片浮起效果 */
+        }
+
+        /* 頭像圖片樣式 */
+        .profile-card img {
+            width: 120px; /* 設定固定寬高，適合手機觀看 */
+            height: 120px;
+            border-radius: 50%; /* 製作圓形頭像 */
+            object-fit: cover; /* 保持圖片比例並填滿容器 */
+            margin-bottom: 15px; /* 與下方文字分開 */
+            border: 3px solid #FFFFFF; /* 白色邊框突顯頭像 */
+        }
+
+        /* 個人資訊區塊 */
+        .profile-info p {
+            font-size: 18px; /* 閱讀友善的字體大小 */
+            line-height: 1.6; /* 增加行距提升可讀性 */
+            text-align: left; /* 文字靠左排列更自然 */
+        }
+
+        /* 社交平台連結區 */
+        .social-links {
+            display: grid; /* 使用網格排版 */
+            grid-template-columns: 1fr; /* 單欄結構適合手機排版 */
+            gap: 10px; /* 按鈕間距避免擁擠 */
+            margin-top: 15px; /* 與標題保持間距 */
+        }
+
+        /* 社交按鈕共用樣式 */
+        .social-links a {
+            display: flex; /* 使用 flex 將圖標與文字水平排列 */
+            align-items: center; /* 圖標與文字垂直置中 */
+            justify-content: center; /* 整個按鈕內容置中 */
+            padding: 12px; /* 按鈕大小適中，易於點擊 */
+            font-size: 18px; /* 文字大小清晰可辨 */
+            color: #FFFFFF; /* 預設文字顏色白色 */
+            background-color: #4F4F4F;
+            border-radius: 12px; /* 圓角增加友善感 */
+            text-decoration: none; /* 移除底線 */
+            transition: background-color 0.6s ease; /* 滑鼠懸停背景色變化有柔和過渡效果 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* 陰影提供立體感 */
+            border: 0.5px solid #FFFFFF;
+
+        }
+
+        .social-links a i {
+            margin-right: 10px; /* 圖標與文字間距 */
+        }
+
+        /* 不同平台按鈕顏色設計 */
+        .facebook { background-color: #1877F2; } /* Facebook 藍色 */
+        .facebook:hover { background-color: #145db2; } /* 懸停時深一點 */
+
+        .instagram:hover { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); } /* Instagram 漸層 */
+
+        .threads { background-color: #000000; } /* Threads 黑色風格 */
+        .threads:hover { background-color: #121212; } /* 懸停時灰色調 */
+
+        .line { background-color: #00C300; } /* LINE 綠色 */
+        .line:hover { background-color: #009e00; } /* 深綠懸停效果 */
+
+        /* 頁腳區塊 */
+        footer {
+            text-align: center; /* 文字置中 */
+            font-family: Source Code Pro ;
+            margin-top: 30px; /* 與內容保持距離 */
+            font-size: 14px; /* 較小字體用於版權資訊 */
+            color: #BBBBBB; /* 淡灰色不搶眼 */
         }
     </style>
-    <title>吳秉乾的小小網站</title>
 </head>
 
 <body>
-    <center>
-        <h1>～自我介紹～</h1>
-    </center>
-      
-    <h2>個人小檔案</h2>    
-    <img src="https://github.com/Benson-WU980419/-/blob/main/S__11296777.jpg?raw=true" alt="photo_error" align="right" height="204.8" width="136.5">
-    <p>姓名：吳秉勳<br>
-       綽號：吳秉乾<br>
-       英文：Benson Wu<br>
-       生日：2009/04/19<br>
-       興趣：拍照、拆解東西<br>
-       學校：國立臺中科技大學<br>
-       科系：資訊工程科(五專)
-    </p>
-    <h2>社交軟體帳號</h2>
-    <div class="button-container">
-        <a href="https://www.facebook.com/wu.benson0419" class="social-button" target="_blank">
-            <i class="fa-brands fa-facebook"></i>Facebook
-        </a><br>
-        <a href="https://www.instagram.com/wu.benson0419" class="social-button" target="_blank">
-            <i class="fa-brands fa-instagram"></i>Instagram
-        </a><br>
-        <a href="https://www.threads.net/@wu.benson0419" class="social-button" target="_blank">
-            <i class="fa-brands fa-threads"></i>Threads
-        </a><br>
-        <a href="https://line.me/ti/p/gwNsHrbZ9Y" class="social-button" target="_blank">
-            <i class="fa-brands fa-line"></i>Line
-        </a>
-    </div>
+    <!-- 頁首區域：網站標題 -->
+    <header>
+        <h1>～吳秉乾的自我介紹～</h1>
+    </header>
+
+    <!-- 個人檔案卡片區 -->
+    <section class="profile-card">
+        <img src="https://github.com/Benson-WU980419/-/blob/main/S__11296777.jpg?raw=true" alt="PictureError">
+        <div class="profile-info">
+            <p><strong>姓名：</strong>吳秉勳</p>
+            <p><strong>綽號：</strong>吳秉乾</p>
+            <p><strong>英文：</strong>Benson Wu</p>
+            <p><strong>生日：</strong>2009/04/19</p>
+            <p><strong>興趣：</strong>攝影、拆解東西</p>
+            <p><strong>學校：</strong>國立臺中科技大學</p>
+            <p><strong>科系：</strong>資訊工程科(五專)</p>
+        </div>
+    </section>
+
+    <!-- 社交平台連結區 -->
+    <section>
+        <h2 style="text-align: center; margin-bottom: 15px;">社交平台連結</h2>
+        <div class="social-links">
+            <a href="https://www.facebook.com/wu.benson0419" target="_blank" class="facebook">
+                <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/wu.benson0419" target="_blank" class="instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.threads.net/@wu.benson0419" target="_blank" class="threads">
+                <i class="fa-brands fa-threads"></i> Threads
+            </a>
+            <a href="https://line.me/ti/p/gwNsHrbZ9Y" target="_blank" class="line">
+                <i class="fa-brands fa-line"></i> Line
+            </a>
+        </div>
+    </section>
+
     <!-- 頁腳版權區 -->
-<footer>
+    <footer>
         © 2025 吳秉乾的小小網站 | 由 Benson Wu 製作<br>
-        v1.1.10
- </footer>
+        v1.2.0
+    </footer>
 </body>
 </html>
